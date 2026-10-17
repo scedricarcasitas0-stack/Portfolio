@@ -14,32 +14,9 @@
 
 const quizzes = [
   {
-    title: "",
-    subject: "",
-    date: "",
-    description: "",
-    
-    images: []
-  },
-  {
-    title: "Quiz 2: Relational Algebra",
-    subject: "CS 214 — Database Systems",
-    date: "Aug 29, 2026",
-    description: "Quiz on relational algebra operations and normalization rules.",
-    files: [
-      { name: "quiz2-relational-algebra.docx", type: "DOCX", url: "#" }
-    ],
-    images: [
-      { src: "https://placehold.co/300x200/191919/9a9a95?text=Scanned+Page+1", alt: "Scanned answer sheet, page 1" }
-    ]
-  },
-  {
-    title: "",
-    subject: "",
-    date: "",
-    description: "",
-    files: [],
-    images: []
+    title: "Quiz 1: Emerging technologies",
+    date: "October 8, 2026",
+    score: "20/20"
   }
 ];
 
@@ -104,6 +81,13 @@ function createCard(entry) {
   head.appendChild(title);
   head.appendChild(date);
   card.appendChild(head);
+
+  if (entry.score) {
+    const score = document.createElement("span");
+    score.className = "card-subject";
+    score.textContent = `Score: ${entry.score}`;
+    card.appendChild(score);
+  }
 
   if (entry.subject) {
     const subject = document.createElement("span");
@@ -188,7 +172,7 @@ function appendAddEntryBox(containerId, label) {
 }
 
 appendAddEntryBox("quizzesGrid", "quiz");
-// Intentionally left empty: quiz entries removed, keep the add-entry box.
+renderSection(quizzes, "quizzesGrid");
 
 appendAddEntryBox("activitiesGrid", "activity");
 renderSection(activities, "activitiesGrid");
