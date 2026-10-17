@@ -16,7 +16,34 @@ const quizzes = [
   {
     title: "Quiz 1: Emerging technologies",
     date: "October 8, 2026",
-    score: "20/20"
+    score: "20/20",
+    images: [
+      { src: "quiz1.png", alt: "Quiz 1: Emerging technologies" }
+    ]
+  },
+  {
+    title: "Quiz 2: Requirements Analysis and Unified Modeling Language",
+     date: "October 8, 2026",
+    score: "19/20",
+    images: [
+      { src: "quiz2.png", alt: "Quiz 2: Requirements Analysis and Unified Modeling Language" }
+    ]
+  },
+  {
+    title: "Quiz 3: The SOLID Principles",
+     date: "October 8, 2026",
+    score: "19/20",
+    images: [
+      { src: "quiz3.png", alt: "Quiz 3: The SOLID Principles" }
+    ]
+  },
+  {
+    title: "Long Quiz: Emerging Technologies, Requirements Analysis and Unified Modeling Language, The SOLID Principles",
+    date: "October 8, 2026",
+    score: "41/45",
+    images: [
+      { src: "LongQuiz.png", alt: "Long Quiz" }
+    ]
   }
 ];
 
@@ -45,18 +72,12 @@ const activities = [
 
 const others = [
   {
-    title: "",
-    subject: "",
-    date: "",
-    type: "",
-    images: []
-  },
-  {
-    title: "",
-    subject: "",
-    date: "",
-    type: "",
-    images: []
+    title: "Midterm Exam: Application Development and Emerging Technologies",
+    date: "October 9, 2026 ",
+    score: "64+10/70",
+    images: [
+      { src: "MidtermExam.png", alt: "Midterm Exam" }
+    ]
   }
 ];
 
@@ -178,7 +199,7 @@ appendAddEntryBox("activitiesGrid", "activity");
 renderSection(activities, "activitiesGrid");
 
 appendAddEntryBox("othersGrid", "exam");
-// Intentionally left empty: examination entries removed, keep the add-entry box.
+renderSection(others, "othersGrid");
 
 /* ---------- 3. LIGHTBOX ---------- */
 
